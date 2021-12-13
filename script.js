@@ -1,3 +1,6 @@
+let playerWins = 0;
+let computerWins = 0;
+
 //Provides random output by the computer
 function computerPlay() {
     let num = Math.floor(Math.random() * 3);
@@ -19,39 +22,77 @@ function computerPlay() {
 }
 
 //Takes user input and computer input and decides outcome
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+
+    let computerSelection = computerPlay();
+    let playerSelection = window.prompt("Rock, paper, or scissors?");
     playerSelection = playerSelection.toLowerCase();
+
     if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
         return "Invalid choice";
     }
-    if (playerSelection == computerPlay) {
-        return "Tie!";
+    if (playerSelection == computerSelection) {
+        return 2;
     }
     else if (playerSelection == "rock") {
-        if (computerPlay == "paper") {
-            return "Computer picked paper, you lose!";
+        if (computerSelection == "paper") {
+            return 1;
         }
         else {
-            return "Computer picked scissors, you win!";
+            return 0;
         }
     }
     else if (playerSelection == "paper") {
-        if (computerPlay == "rock") {
-            return "Computer picked rock, you win!";
+        if (computerSelection == "rock") {
+            return 0;
         }
         else {
-            return "Computer picked scissors, you lose!";
+            return 1;
         }
     }
     else {
-        if (computerPlay == "rock") {
-            return "Computer picked rock, you lose!";
+        if (computerSelection == "rock") {
+            return 1;
         }
         else {
-            return "Computer picked paper, you win!";
+            return 0;
         }
     }
 }
 
-const computerSelection = computerPlay();
-const playerSelection = "rock";
+
+function game() {
+    
+    for (let i = 0; i < 5; i++) {
+        let winner = playRound();
+        
+        if (winner == 0) {
+            playerWins++;
+            console.log("Player wins!");
+            console.log(`Player: ${playerWins} Computer: ${computerWins}`);
+        }
+        else if (winner == 1) {
+            computerWins++;
+            console.log("Computer wins!");
+            console.log(`Player: ${playerWins} Computer: ${computerWins}`);
+        }
+        else {
+            console.log("Tie!");
+            console.log(`Player: ${playerWins} Computer: ${computerWins}`);
+        }
+
+    }
+    if (playerWins > computerWins) {
+        console.log("Player has won the BO5!");
+    }
+    else if (computerWins > playerWins) {
+        console.log("Computer has won the BO5!");
+    }
+    else {
+        console.log("Tie for the BO5!");
+    }
+    
+    playerWins = 0;
+    computerWins = 0;
+  
+}
