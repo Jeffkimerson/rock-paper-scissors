@@ -1,4 +1,5 @@
 //Provides random output by the computer
+
 function computerPlay() {
     let num = Math.floor(Math.random() * 3);
     let choice;
@@ -24,11 +25,11 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
         return "Invalid choice";
     }
-    if (playerSelection == computerPlay) {
+    if (playerSelection == computerSelection) {
         return "Tie!";
     }
     else if (playerSelection == "rock") {
-        if (computerPlay == "paper") {
+        if (computerSelection == "paper") {
             return "Computer picked paper, you lose!";
         }
         else {
@@ -36,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     else if (playerSelection == "paper") {
-        if (computerPlay == "rock") {
+        if (computerSelection == "rock") {
             return "Computer picked rock, you win!";
         }
         else {
@@ -44,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     else {
-        if (computerPlay == "rock") {
+        if (computerSelection == "rock") {
             return "Computer picked rock, you lose!";
         }
         else {
@@ -53,5 +54,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const computerSelection = computerPlay();
-const playerSelection = "rock";
+
+
+
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.id, computerPlay()));
+       
+    });
+});
