@@ -2,6 +2,7 @@ let playerWins = 0;
 let computerWins = 0;
 
 //Provides random output by the computer
+
 function computerPlay() {
     let num = Math.floor(Math.random() * 3);
     let choice;
@@ -32,11 +33,19 @@ function playRound() {
         return "Invalid choice";
     }
     if (playerSelection == computerSelection) {
+<<<<<<< HEAD
         return 2;
     }
     else if (playerSelection == "rock") {
         if (computerSelection == "paper") {
             return 1;
+=======
+        return "Tie!";
+    }
+    else if (playerSelection == "rock") {
+        if (computerSelection == "paper") {
+            return "Computer picked paper, you lose!";
+>>>>>>> 748c837 (Add button functionality into console log)
         }
         else {
             return 0;
@@ -44,7 +53,11 @@ function playRound() {
     }
     else if (playerSelection == "paper") {
         if (computerSelection == "rock") {
+<<<<<<< HEAD
             return 0;
+=======
+            return "Computer picked rock, you win!";
+>>>>>>> 748c837 (Add button functionality into console log)
         }
         else {
             return 1;
@@ -52,7 +65,11 @@ function playRound() {
     }
     else {
         if (computerSelection == "rock") {
+<<<<<<< HEAD
             return 1;
+=======
+            return "Computer picked rock, you lose!";
+>>>>>>> 748c837 (Add button functionality into console log)
         }
         else {
             return 0;
@@ -61,6 +78,7 @@ function playRound() {
 }
 
 
+<<<<<<< HEAD
 function game() {
     
     for (let i = 0; i < 5; i++) {
@@ -96,3 +114,16 @@ function game() {
     computerWins = 0;
   
 }
+=======
+
+
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.id, computerPlay()));
+       
+    });
+});
+>>>>>>> 748c837 (Add button functionality into console log)
