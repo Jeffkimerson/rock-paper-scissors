@@ -1,6 +1,3 @@
-let playerWins = 0;
-let computerWins = 0;
-
 //Provides random output by the computer
 
 function computerPlay() {
@@ -23,12 +20,8 @@ function computerPlay() {
 }
 
 //Takes user input and computer input and decides outcome
-function playRound() {
-
-    let computerSelection = computerPlay();
-    let playerSelection = window.prompt("Rock, paper, or scissors?");
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-
     if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
         return "Invalid choice";
     }
@@ -40,7 +33,7 @@ function playRound() {
             return "Computer picked paper, you lose!";
         }
         else {
-            return 0;
+            return "Computer picked scissors, you win!";
         }
     }
     else if (playerSelection == "paper") {
@@ -48,7 +41,7 @@ function playRound() {
             return "Computer picked rock, you win!";
         }
         else {
-            return 1;
+            return "Computer picked scissors, you lose!";
         }
     }
     else {
@@ -56,7 +49,7 @@ function playRound() {
             return "Computer picked rock, you lose!";
         }
         else {
-            return 0;
+            return "Computer picked paper, you win!";
         }
     }
 }
