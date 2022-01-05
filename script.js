@@ -33,19 +33,11 @@ function playRound() {
         return "Invalid choice";
     }
     if (playerSelection == computerSelection) {
-<<<<<<< HEAD
         return 2;
     }
     else if (playerSelection == "rock") {
         if (computerSelection == "paper") {
             return 1;
-=======
-        return "Tie!";
-    }
-    else if (playerSelection == "rock") {
-        if (computerSelection == "paper") {
-            return "Computer picked paper, you lose!";
->>>>>>> 748c837 (Add button functionality into console log)
         }
         else {
             return 0;
@@ -53,11 +45,7 @@ function playRound() {
     }
     else if (playerSelection == "paper") {
         if (computerSelection == "rock") {
-<<<<<<< HEAD
-            return 0;
-=======
             return "Computer picked rock, you win!";
->>>>>>> 748c837 (Add button functionality into console log)
         }
         else {
             return 1;
@@ -65,11 +53,7 @@ function playRound() {
     }
     else {
         if (computerSelection == "rock") {
-<<<<<<< HEAD
-            return 1;
-=======
             return "Computer picked rock, you lose!";
->>>>>>> 748c837 (Add button functionality into console log)
         }
         else {
             return 0;
@@ -78,43 +62,6 @@ function playRound() {
 }
 
 
-<<<<<<< HEAD
-function game() {
-    
-    for (let i = 0; i < 5; i++) {
-        let winner = playRound();
-        
-        if (winner == 0) {
-            playerWins++;
-            console.log("Player wins!");
-            console.log(`Player: ${playerWins} Computer: ${computerWins}`);
-        }
-        else if (winner == 1) {
-            computerWins++;
-            console.log("Computer wins!");
-            console.log(`Player: ${playerWins} Computer: ${computerWins}`);
-        }
-        else {
-            console.log("Tie!");
-            console.log(`Player: ${playerWins} Computer: ${computerWins}`);
-        }
-
-    }
-    if (playerWins > computerWins) {
-        console.log("Player has won the BO5!");
-    }
-    else if (computerWins > playerWins) {
-        console.log("Computer has won the BO5!");
-    }
-    else {
-        console.log("Tie for the BO5!");
-    }
-    
-    playerWins = 0;
-    computerWins = 0;
-  
-}
-=======
 
 let playerWins = 0;
 let computerWins = 0;
@@ -156,4 +103,3 @@ buttons.forEach((button) => {
        
     });
 });
->>>>>>> 748c837 (Add button functionality into console log)
