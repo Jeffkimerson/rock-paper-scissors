@@ -58,13 +58,13 @@ function playRound(playerSelection, computerSelection) {
 
 let playerWins = 0;
 let computerWins = 0;
-
+//Create default wins for each
 document.getElementById('playerWins').innerHTML = `Player: ${playerWins}`;
 document.getElementById('computerWins').innerHTML = `Computer: ${computerWins}`;
 
 
 
-
+//Generates an outcome when user makes a choice
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -72,15 +72,13 @@ buttons.forEach((button) => {
         document.getElementById('result').innerHTML = result;
         
 
-        
+        //Update the number of wins for each after each round
         let win = /win/;
         let lose = /lose/;
         if (win.test(result)) {
             playerWins++;
             document.getElementById('playerWins').innerHTML = `Player: ${playerWins}`;
-            if (playerWins == 5) {
-
-            }
+            
         }  
         else if (lose.test(result)) {
             computerWins++;
