@@ -33,11 +33,11 @@ function playRound() {
         return "Invalid choice";
     }
     if (playerSelection == computerSelection) {
-        return 2;
+        return "Tie!";
     }
     else if (playerSelection == "rock") {
         if (computerSelection == "paper") {
-            return 1;
+            return "Computer picked paper, you lose!";
         }
         else {
             return 0;
