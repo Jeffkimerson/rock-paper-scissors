@@ -85,9 +85,7 @@ buttons.forEach((button) => {
         if (win.test(result)) {
             playerWins++;
             document.getElementById('playerWins').innerHTML = `Player: ${playerWins}`;
-            if (playerWins == 5) {
-
-            }
+            
         }  
         else if (lose.test(result)) {
             computerWins++;
